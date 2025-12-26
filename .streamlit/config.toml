@@ -1,0 +1,19 @@
+[theme]
+primaryColor = "#1E3A8A"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3F4F6"
+textColor = "#262730"
+font = "sans serif"
+
+[server]
+port = 8501
+address = "0.0.0.0"
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+# Add this to avoid dependency resolution issues
+[global]
+developmentMode = false

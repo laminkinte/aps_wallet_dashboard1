@@ -1,0 +1,54 @@
+# IMPORTANT: This file should never be committed to version control
+# Add this file to .gitignore
+
+# Database credentials
+[database]
+host = "localhost"
+port = 5432
+database = "apswallet"
+username = "admin"
+password = "your-secret-password"
+
+# API Keys
+[api_keys]
+openai = "sk-..."
+mapbox = "pk.eyJ1Ij..."
+google_maps = "AIzaSy..."
+stripe = "sk_live_..."
+
+# Email configuration
+[smtp]
+server = "smtp.gmail.com"
+port = 587
+username = "reports@apswallet.com"
+password = "your-email-password"
+
+# Authentication
+[auth]
+secret_key = "your-super-secret-key-here"
+algorithm = "HS256"
+access_token_expire_minutes = 30
+
+# External services
+[services]
+slack_webhook = "https://hooks.slack.com/services/..."
+jira_api_key = "your-jira-api-key"
+salesforce_client_id = "your-salesforce-client-id"
+salesforce_client_secret = "your-salesforce-client-secret"
+
+# Analytics tracking
+[analytics]
+google_analytics_id = "UA-XXXXX-Y"
+mixpanel_token = "your-mixpanel-token"
+amplitude_api_key = "your-amplitude-key"
+
+# Storage
+[storage]
+aws_access_key_id = "AKIA..."
+aws_secret_access_key = "your-aws-secret-key"
+s3_bucket = "apswallet-data"
+azure_storage_connection_string = "DefaultEndpointsProtocol=..."
+
+# Encryption
+[encryption]
+key = "32-byte-key-for-encryption-here"
