@@ -9,8 +9,4 @@ streamlit-option-menu>=0.3.6
 plotly-express>=0.4.0
 openpyxl>=3.1.0
 xlsxwriter>=3.1.0
-<<<<<<< HEAD
 python-dateutil>=2.8.0
-=======
-python-dateutil>=2.8.0
->>>>>>> d69c7e99ef9c39de5c30cdd325ca3da41cb193c4
