@@ -1,8 +1,10 @@
 [server]
-maxUploadSize = 10000 # 5GB in MB
-maxMessageSize = 10000
+maxUploadSize = 10240  # 10GB in MB (was 200)
+maxMessageSize = 10240  # 10GB in MB
 enableCORS = true
 enableXsrfProtection = true
+enableStaticServing = true
+port = 8501
 
 [client]
 caching = true
@@ -11,34 +13,34 @@ showErrorDetails = false
 [runner]
 magicEnabled = false
 
-# Memory optimization
+[browser]
+gatherUsageStats = false
+
+# Memory and performance settings for large files
 [memory]
-maxCacheSize = 4096  # 4GB cache
+maxCacheSize = 8192  # 8GB cache
 enableMemoryOptimization = true
-chunkSize = 1000000  # 1 million rows per chunk
+chunkSize = 2000000  # 2 million rows per chunk for 10GB files
 
-# Large file handling
 [files]
-maxChunkSize = 104857600  # 100MB chunks
+maxChunkSize = 209715200  # 200MB chunks for upload
 enableCompression = true
-temporaryStorage = "./temp"
-cleanupInterval = 3600  # 1 hour
+temporaryStorage = "./temp_uploads"
+cleanupInterval = 7200  # Cleanup every 2 hours
 
-# Performance optimization
 [performance]
 enableParallelProcessing = true
-numWorkers = 4
+numWorkers = 8  # More workers for large files
 enableCompression = true
 enableMinification = true
 
-# Database for large datasets
 [database]
 enabled = true
-type = "sqlite"  # or "postgresql"
-maxConnections = 10
-poolSize = 5
+type = "sqlite"
+maxConnections = 20  # More connections for large files
+poolSize = 10
 
 [logging]
 filePath = "./logs"
-maxFileSize = 1073741824  # 1GB
+maxFileSize = 2147483648  # 2GB max log file
 level = "INFO"
