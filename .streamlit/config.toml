@@ -1,19 +1,32 @@
-[theme]
-primaryColor = "#1E3A8A"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F3F4F6"
-textColor = "#262730"
-font = "sans serif"
-
 [server]
+maxUploadSize = 0  # 0 means NO LIMIT
+maxMessageSize = 0  # 0 means NO LIMIT
+enableCORS = true
+enableXsrfProtection = true
+enableStaticServing = true
 port = 8501
 address = "0.0.0.0"
-enableCORS = false
-enableXsrfProtection = true
 
 [browser]
 gatherUsageStats = false
+serverAddress = "localhost"
 
-# Add this to avoid dependency resolution issues
+[client]
+caching = true
+showErrorDetails = true
+
+[runner]
+magicEnabled = false
+fastRerun = true
+
 [global]
 developmentMode = false
+disableWatchdogWarning = true
+unitTest = false
+logLevel = "debug"
+
+# Custom settings for unlimited uploads
+[custom]
+uploadLimit = "unlimited"
+maxFileSize = 0
+allowAnyFileType = true
