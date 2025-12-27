@@ -1,54 +1,44 @@
-# IMPORTANT: This file should never be committed to version control
-# Add this file to .gitignore
+[server]
+maxUploadSize = 5120  # 5GB in MB
+maxMessageSize = 5120
+enableCORS = true
+enableXsrfProtection = true
 
-# Database credentials
+[client]
+caching = true
+showErrorDetails = false
+
+[runner]
+magicEnabled = false
+
+# Memory optimization
+[memory]
+maxCacheSize = 4096  # 4GB cache
+enableMemoryOptimization = true
+chunkSize = 1000000  # 1 million rows per chunk
+
+# Large file handling
+[files]
+maxChunkSize = 104857600  # 100MB chunks
+enableCompression = true
+temporaryStorage = "./temp"
+cleanupInterval = 3600  # 1 hour
+
+# Performance optimization
+[performance]
+enableParallelProcessing = true
+numWorkers = 4
+enableCompression = true
+enableMinification = true
+
+# Database for large datasets
 [database]
-host = "localhost"
-port = 5432
-database = "apswallet"
-username = "admin"
-password = "your-secret-password"
+enabled = true
+type = "sqlite"  # or "postgresql"
+maxConnections = 10
+poolSize = 5
 
-# API Keys
-[api_keys]
-openai = "sk-..."
-mapbox = "pk.eyJ1Ij..."
-google_maps = "AIzaSy..."
-stripe = "sk_live_..."
-
-# Email configuration
-[smtp]
-server = "smtp.gmail.com"
-port = 587
-username = "reports@apswallet.com"
-password = "your-email-password"
-
-# Authentication
-[auth]
-secret_key = "your-super-secret-key-here"
-algorithm = "HS256"
-access_token_expire_minutes = 30
-
-# External services
-[services]
-slack_webhook = "https://hooks.slack.com/services/..."
-jira_api_key = "your-jira-api-key"
-salesforce_client_id = "your-salesforce-client-id"
-salesforce_client_secret = "your-salesforce-client-secret"
-
-# Analytics tracking
-[analytics]
-google_analytics_id = "UA-XXXXX-Y"
-mixpanel_token = "your-mixpanel-token"
-amplitude_api_key = "your-amplitude-key"
-
-# Storage
-[storage]
-aws_access_key_id = "AKIA..."
-aws_secret_access_key = "your-aws-secret-key"
-s3_bucket = "apswallet-data"
-azure_storage_connection_string = "DefaultEndpointsProtocol=..."
-
-# Encryption
-[encryption]
-key = "32-byte-key-for-encryption-here"
+[logging]
+filePath = "./logs"
+maxFileSize = 1073741824  # 1GB
+level = "INFO"
