@@ -4,7 +4,7 @@ maxMessageSize = 10240  # 10GB in MB
 enableCORS = true
 enableXsrfProtection = true
 enableStaticServing = true
-port = 8501
+port = 8502
 
 [client]
 caching = true
