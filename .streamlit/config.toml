@@ -1,11 +1,12 @@
 [server]
-maxUploadSize = 0  # 0 means NO LIMIT
-maxMessageSize = 0  # 0 means NO LIMIT
+maxUploadSize = 0  # 0 = UNLIMITED
+maxMessageSize = 0  # 0 = UNLIMITED
 enableCORS = true
 enableXsrfProtection = true
-enableStaticServing = true
-port = 8501
-address = "0.0.0.0"
+enableStaticServing = false  # Disable since we don't have static folder
+
+[browser]
+gatherUsageStats = false
 
 [browser]
 gatherUsageStats = false
@@ -30,3 +31,4 @@ logLevel = "debug"
 uploadLimit = "unlimited"
 maxFileSize = 0
 allowAnyFileType = true
+
